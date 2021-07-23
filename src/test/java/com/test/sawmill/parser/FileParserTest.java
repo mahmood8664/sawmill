@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author mahmood
  * @since 7/23/21
  */
-public class FileParserTest {
+class FileParserTest {
 
     @Test
     void testFileParser_Successful() {

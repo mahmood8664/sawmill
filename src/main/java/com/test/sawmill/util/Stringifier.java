@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
  */
 public class Stringifier {
 
+    Stringifier() {
+    }
+
     public static String stringify(List<AggregateTrunkSolution> aggregateTrunkSolution) {
 
         StringBuilder output = new StringBuilder();

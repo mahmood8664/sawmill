@@ -20,6 +20,9 @@ import java.util.List;
  */
 public class FileParser {
 
+    private FileParser() {
+    }
+
     /**
      * Parser the file and return TrunkCases, never return null
      *

@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author mahmood
  * @since 7/23/21
  */
-public class SawmillImplTest {
+class SawmillImplTest {
 
     @Test
     void testSolve() {

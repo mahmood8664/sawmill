@@ -9,7 +9,7 @@ import java.util.List;
  * @author mahmood
  * @since 7/23/21
  */
-public class PermutationUtilTest {
+class PermutationUtilTest {
 
     @Test
     void PermutationTest() {

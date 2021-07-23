@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  */
 class SawmillImpl implements SawmillService {
 
-    private final static int CUTTER_SIZE = 3;
+    private static final int CUTTER_SIZE = 3;
 
     SawmillImpl() {
     }

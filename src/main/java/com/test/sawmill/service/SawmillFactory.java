@@ -6,16 +6,12 @@ package com.test.sawmill.service;
  */
 public class SawmillFactory {
 
-    private static SawmillImpl instance;
+    private SawmillFactory() {
+    }
+
+    private static final SawmillImpl instance = new SawmillImpl();
 
     public static SawmillService getInstance() {
-        if (instance == null) {
-            synchronized (SawmillFactory.class) {
-                if (instance == null) {
-                    instance = new SawmillImpl();
-                }
-            }
-        }
         return instance;
     }
 

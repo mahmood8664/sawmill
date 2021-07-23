@@ -10,6 +10,9 @@ import java.util.List;
  */
 public class PermutationUtil {
 
+    private PermutationUtil() {
+    }
+
     public static <E> List<List<E>> generatePerm(List<E> original) {
         List<E> copy = new ArrayList<>(original);
         Collections.copy(copy, copy);
