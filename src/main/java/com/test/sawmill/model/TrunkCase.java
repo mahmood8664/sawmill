@@ -16,5 +16,5 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class TrunkCase {
-    private List<List<Integer>> riversTrunks;
+    private List<List<Integer>> allTrunks;
 }

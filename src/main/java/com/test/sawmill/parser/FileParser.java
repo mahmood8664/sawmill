@@ -40,7 +40,7 @@ public class FileParser {
             int numberOfNextLines = Integer.parseInt(reader.readLine());
             while( numberOfNextLines != 0){
 
-                TrunkCase aCase = TrunkCase.builder().riversTrunks(new ArrayList<>()).build();
+                TrunkCase aCase = TrunkCase.builder().allTrunks(new ArrayList<>()).build();
 
                 for (int i = 0; i < numberOfNextLines; i++) {
                     List<Integer> trunks = new ArrayList<>();
@@ -53,7 +53,7 @@ public class FileParser {
                         trunks.add(Integer.valueOf(caseSplit[j]));
                     }
                     //
-                    aCase.getRiversTrunks().add(trunks);
+                    aCase.getAllTrunks().add(trunks);
                 }
                 trunkCaseList.add(aCase);
                 numberOfNextLines = Integer.parseInt(reader.readLine());

@@ -20,9 +20,9 @@ public class FileParserTest {
 
         Assertions.assertThat(trunkCases.size()).isEqualTo(2);
 
-        Assertions.assertThat(trunkCases.get(0).getRiversTrunks()).isEqualTo(List.of(List.of(2, 3, 1)));
+        Assertions.assertThat(trunkCases.get(0).getAllTrunks()).isEqualTo(List.of(List.of(2, 3, 1)));
 
-        Assertions.assertThat(trunkCases.get(1).getRiversTrunks()).isEqualTo(List.of(List.of(1, 2, 1), List.of(1, 2), List.of(1, 4)));
+        Assertions.assertThat(trunkCases.get(1).getAllTrunks()).isEqualTo(List.of(List.of(1, 2, 1), List.of(1, 2), List.of(1, 4)));
 
     }
 
