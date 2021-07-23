@@ -113,17 +113,17 @@ class SawmillImpl implements SawmillService {
 
         int maxProfit = 0;
 
-        AggregateTrunkSolution aggregateTrunkSolution = new AggregateTrunkSolution();
-        aggregateTrunkSolution.setSolutions(new ArrayList<>());
-
+        List<List<List<Integer>>> solutions = new ArrayList<>();
         for (TrunkSolution trunkSolution : solutionList) {
             maxProfit += trunkSolution.getMaxProfit();
-            aggregateTrunkSolution.getSolutions().add(trunkSolution.getSolutions());
+            solutions.add(trunkSolution.getSolutions());
         }
-        aggregateTrunkSolution.setMaxProfit(maxProfit);
-        aggregateTrunkSolution.setCaseNumber(caseNumber);
 
-        return aggregateTrunkSolution;
+        return AggregateTrunkSolution.builder()
+                .solutions(solutions)
+                .maxProfit(maxProfit)
+                .caseNumber(caseNumber)
+                .build();
 
     }
 
@@ -131,9 +131,9 @@ class SawmillImpl implements SawmillService {
      * just keeps max profits
      */
     List<TrunkSolutionHolder> keepMax(List<TrunkSolutionHolder> solutionHolders) {
-        List<TrunkSolutionHolder> copy = new ArrayList<>(solutionHolders);
+        List<TrunkSolutionHolder> copy = new ArrayList<>(solutionHolders);//sorting can be performed on mutable lists
         copy.sort((o1, o2) -> o2.profit - o1.profit);
-        Set<TrunkSolutionHolder> newList = new HashSet<>();//define set to remove duplicate
+        Set<TrunkSolutionHolder> newList = new HashSet<>();//use set to remove duplicate
         if (copy.size() <= 1) {
             return copy;
         } else {
@@ -148,7 +148,7 @@ class SawmillImpl implements SawmillService {
         }
 
         ArrayList<TrunkSolutionHolder> maxProfitList = new ArrayList<>(newList);
-        maxProfitList.sort((o1, o2) -> compareList(o1.order, o2.getOrder()));
+        maxProfitList.sort((o1, o2) -> compareList(o1.order, o2.getOrder()));//use sorting for constant order of same problems
         return maxProfitList;
     }
 
